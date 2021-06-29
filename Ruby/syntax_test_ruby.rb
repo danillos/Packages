@@ -1161,8 +1161,40 @@ def my_function
 #   ^^^^^^^^^^^ entity.name.function
 end
 
-f = MyModule::MyClass.new
+
+f = MyConstant
+#   ^^^^^^^^^^ variable.other.constant.ruby
+
+f = MYCONSTANT
+#   ^^^^^^^^^^ variable.other.constant.ruby
+
+f = MyModule::
+#   ^^^^^^^^ support.class.ruby
 #           ^^ punctuation.accessor.double-colon
+
+f = MyModule::MyClass
+#   ^^^^^^^^ support.class.ruby
+#           ^^ punctuation.accessor.double-colon
+#             ^^^^^^^ support.class.ruby
+
+f = MyModule::CONSTANT
+#   ^^^^^^^^ support.class.ruby
+#           ^^ punctuation.accessor.double-colon
+#             ^^^^^^^^ variable.other.constant.ruby
+
+f = MyModule::MyClass.new
+#   ^^^^^^^^ support.class.ruby
+#           ^^ punctuation.accessor.double-colon
+#             ^^^^^^^ support.class.ruby
+#                    ^ punctuation.accessor.dot.ruby
+#                     ^^^ keyword.other.special-method.ruby
+
+f = MyModule::MYCLASS.new
+#   ^^^^^^^^ support.class.ruby
+#           ^^ punctuation.accessor.double-colon
+#             ^^^^^^^ support.class.ruby
+#                    ^ punctuation.accessor.dot.ruby
+#                     ^^^ keyword.other.special-method.ruby
 
 def f.my_instance_method
 #^^^^^^^^^^^^^^^^^^^^^^^ meta.function

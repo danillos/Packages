@@ -1192,7 +1192,7 @@ f = MyModule::MyClass.new
 f = MyModule::MYCLASS.new
 #   ^^^^^^^^ support.class.ruby
 #           ^^ punctuation.accessor.double-colon
-#             ^^^^^^^ support.class.ruby
+#             ^^^^^^^ variable.other.constant.ruby
 #                    ^ punctuation.accessor.dot.ruby
 #                     ^^^ keyword.other.special-method.ruby
 

@@ -629,8 +629,11 @@ A, B, C = 0
 #     ^ entity.name.constant
 
 Symbol === :foo
-# ^^^^ variable.other.constant.ruby -meta.constant.ruby
-#          ^^^^
+# <- support.class.ruby
+#^^^^^ support.class.ruby
+#      ^^^ keyword.operator.comparison.ruby
+#          ^^^^ constant.other.symbol.ruby
+#          ^ punctuation.definition.constant.ruby
 
   :'foo #{ } #@bar baz'
 # ^^^^^^^^^^^^^^^^^^^^^ meta.constant.ruby - meta.interpolation
@@ -1163,7 +1166,7 @@ end
 
 
 f = MyConstant
-#   ^^^^^^^^^^ variable.other.constant.ruby
+#   ^^^^^^^^^^ support.class.ruby
 
 f = MYCONSTANT
 #   ^^^^^^^^^^ variable.other.constant.ruby
